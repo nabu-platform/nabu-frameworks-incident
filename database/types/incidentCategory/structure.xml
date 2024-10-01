@@ -1,0 +1,4 @@
+<structure collectionName="incidentCategories" comment="A logical grouping of incident types, specifically for rules concerning assignment, notification.." name="incidentCategory">
+    <field name="id" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" primaryKey="true" type="java.util.UUID"/>
+    <field name="name" type="java.lang.String"/>
+</structure>

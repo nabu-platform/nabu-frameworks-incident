@@ -1,0 +1,6 @@
+<structure name="emailProperties">
+    <field comment="Comma separated list of addresses" name="to" type="java.lang.String"/>
+    <field comment="You can optionally set a subject" minOccurs="0" name="subject" type="java.lang.String"/>
+    <field comment="You can optionally set a body" minOccurs="0" name="body" type="java.lang.String"/>
+    <field comment="If not provided, a random available one will be used" minOccurs="0" name="smtpClientId" type="java.lang.String"/>
+</structure>

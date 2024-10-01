@@ -1,0 +1,6 @@
+<structure interface="nabu.frameworks.incident.specs.trigger" name="pipeline">
+    <structure name="input" restrict="properties">
+        <structure definition="nabu.frameworks.incident.providers.trigger.emailProperties" name="properties"/>
+    </structure>
+    <structure name="output"/>
+</structure>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<cache>
+    <cacheProvider>nabu.frameworks.incident.utils.memoryCache</cacheProvider>
+    <service>nabu.frameworks.incident.services.getIncidentType</service>
+    <enableInDevelopment>true</enableInDevelopment>
+</cache>

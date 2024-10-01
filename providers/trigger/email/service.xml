@@ -1,0 +1,201 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="87c841ad9d714a63b040684b8c73727e"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Break"
+			comment="Nobody to send to"
+			disabled="false"
+			id="4cd41b0b6c054d76b58d9588dff0c964"
+			label="input/properties/to == null"
+			lineNumber="2">
+		<count>1</count>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="aab379ab532b4fd68bcba5bc92663d9c"
+			label="input/properties/smtpClientId == null"
+			lineNumber="3">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="1d919380816441ff9df8e4e0cb73be38"
+				serviceId="nabu.utils.reflection.Node.listByType"
+				resultName="result230a4cb1dc7a45db801d609645de8838"
+				temporaryMapping="true"
+				x="118"
+				y="49"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="b82329dfeffd4f5db139050caf2d07dd"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>be.nabu.eai.module.smtp.SMTPClientArtifact</from>
+				<to>type</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="3cad02e6884549c6bf11e6dc04d749cd"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result230a4cb1dc7a45db801d609645de8838/nodes[0]/id</from>
+			<to>input/properties/smtpClientId</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="eb71452988af49db8dbc0adffcd60a03"
+			label="input/properties/subject == null"
+			lineNumber="4">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="5e4af8d74e57487090cc534cc71fb3ed"
+				mask="false"
+				optional="false"
+				fixedValue="true">
+			<from>="An incident of type '" + input/incidentType/name + "' has occurred"</from>
+			<to>input/properties/subject</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="b73f9ec57a8443b1a31cf3e284b3bd05"
+			label="input/properties/body == null"
+			lineNumber="5">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="ee0247ade9df430c852723df784783c4"
+				mask="false"
+				optional="false"
+				fixedValue="true">
+			<from>="This incident is rated as '" + input/incident/severity + "'"</from>
+			<to>input/properties/body</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="293a95eaa57b42eab748862b7788fabb"
+			lineNumber="6">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="c55e6e820e9d4dff9373060d8f57f1a7"
+				serviceId="nabu.protocols.smtp.client.Services.send"
+				resultName="resultf8f88ace91624a66beb0708c6231dde9"
+				temporaryMapping="true"
+				x="950"
+				y="149"
+				invocationOrder="2"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="79a787a2bc0c4ff6961d703b9bbfe3fb"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/properties/smtpClientId</from>
+				<to>smtpClientId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="3fc76e54330547809851f9ffb08a7adc"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>resultddf7a0997874483f8fc70b92ca9e5380/parts</from>
+				<to>to</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="80b6b3308b504044a61a2238d5bd2f78"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>resultfed35f76a09b4573a8f6545557bd9a96/part</from>
+				<to>part</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="052213d412ca450cb9ea0dacb8aceca4"
+				serviceId="nabu.protocols.smtp.client.Services.newEmailPart"
+				resultName="resultfed35f76a09b4573a8f6545557bd9a96"
+				temporaryMapping="true"
+				x="500"
+				y="61"
+				invocationOrder="1"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="24b4a075c950406dbc5ae9f37684b09f"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>resultddf7a0997874483f8fc70b92ca9e5380/parts</from>
+				<to>to</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="2ffa68b127ea4dbbbde41913cd002145"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/properties/subject</from>
+				<to>subject</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="6b4930a39c5b4987bca5ecb5286c49ab"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/properties/body</from>
+				<to>content</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="25d0b43936f343be9143f424d3469d3d"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>HTML</from>
+				<to>type</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="7eadd85271a74c2aa57f741d1490d097"
+				serviceId="nabu.utils.String.split"
+				resultName="resultddf7a0997874483f8fc70b92ca9e5380"
+				temporaryMapping="true"
+				x="42"
+				y="288"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="f3e334a2a1b4484a8d7e06c2a68258c5"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/properties/to</from>
+				<to>string</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="ff47f00315ca4681b102fab452defcf7"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>[\s]*,[\s]*</from>
+				<to>separator</to>
+			</steps>
+		</steps>
+	</steps>
+</sequence>

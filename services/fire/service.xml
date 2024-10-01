@@ -1,0 +1,518 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="df1d338c179b4d0480d9e5402917b9f0"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="e8efce39f17a41e094bdaf73209232f5"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="20cf190da83149adb0d3d23e5eaa6d41"
+				serviceId="nabu.frameworks.incident.services.getIncidentType"
+				resultName="result15a3fca56bf74e31805614266dea34fb"
+				temporaryMapping="true"
+				x="30"
+				y="30"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="2dd09d22b4f14eb98b520567df9ac69c"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/incidentType</from>
+				<to>incidentType</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="e4fe112763bb4ca1b740852f74a6d415"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result15a3fca56bf74e31805614266dea34fb/incidentType</from>
+			<to>incidentType</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Break"
+			comment="Do nothing"
+			disabled="false"
+			id="f1d8288c479149deb9ebe6ae65ab9747"
+			label="!incidentType/active"
+			lineNumber="3">
+		<count>1</count>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="Get the most recent incident (there should not be multiple but hey...)"
+			disabled="false"
+			id="32a115761f7048678a423a74b7fdbef4"
+			lineNumber="4">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="be9adabe6afd4a8e9ae9be3920014841"
+				serviceId="nabu.frameworks.incident.crud.incident.services.list"
+				resultName="resultbc0a28160a564a06bdc81b6ae9c658ec"
+				temporaryMapping="true"
+				x="171"
+				y="73"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="789c088f17da4e9e80fa9537ed84346c"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>incidentType/id</from>
+				<to>filter/incidentTypeId[0]</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="3a505c098d3d48e49db30d62e765c466"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/incidentKey</from>
+				<to>filter/incidentKey[0]</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="03f53b72a03c4928a39692bc3385fc7c"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>HANDLED</from>
+				<to>filter/notState[0]</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="6ebc2c8a0aed46b58be398334152b532"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>started desc</from>
+				<to>orderBy[0]</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="10df96ba261c419c8f1bb88196a1df7f"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>1</from>
+				<to>limit</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="745e736c57cb464e9884484461299d84"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultbc0a28160a564a06bdc81b6ae9c658ec/results[0]</from>
+			<to>activeIncident</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="d4e79e39869743a89cf6fa6f82d55ce5"
+				mask="false"
+				optional="false"
+				fixedValue="true">
+			<from>false</from>
+			<to>trigger</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="e3a904d9be9f42338032bf0cc0ddc3b4"
+				serviceId="nabu.utils.Date.now"
+				resultName="result3c41dc31cad04a7799ba87cb804a3188"
+				temporaryMapping="true"
+				x="304"
+				y="168"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="73428f0e4a4e4764bb853f3f706d27e0"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result3c41dc31cad04a7799ba87cb804a3188/date</from>
+			<to>date</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="We default to notification if we get here..."
+			disabled="false"
+			id="37a0a04cbf7b40078417611066578b79"
+			label="input/severity == null"
+			lineNumber="5">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="9b8a2815344f42e5bcd80439de1e69fc"
+				mask="false"
+				optional="false"
+				fixedValue="true">
+			<from>NOTIFICATION</from>
+			<to>input/severity</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
+			disabled="false"
+			id="48a559ea46904c0fb99931741c733297"
+			lineNumber="6">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="If there is no incident yet, create it"
+				disabled="false"
+				id="aaba35459b1b4e4692325deb03841a18"
+				label="!activeIncident"
+				lineNumber="7">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="1f371338ef4e4865a020343550222fb4"
+					serviceId="nabu.frameworks.incident.crud.incident.services.create"
+					resultName="result6fb32ead6abd4f28afe4a7b7544d3893"
+					temporaryMapping="true"
+					x="447"
+					y="80"
+					invocationOrder="1"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="9edee976b2a0493db625f3857e2ba963"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>incidentType/id</from>
+					<to>instance/incidentTypeId</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="3fcf3f479ff140b5b7d65e781b80afc0"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>CREATED</from>
+					<to>instance/state</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="17f5f0e8af524696b63178ff80f9f9bd"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/incidentKey</from>
+					<to>instance/incidentKey</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="effcb3783bca4ba7b36b44e02b35c0c6"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>1</from>
+					<to>instance/incidentCount</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="34eabad29d404fe0bbd504f12c40c5a0"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/severity</from>
+					<to>instance/severity</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="a2819ba4e22f4ff4a2921302c628b4d1"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>date</from>
+					<to>instance/started</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="703237d3cc464e09ac1aab3bccee4f4e"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>=incidentType/incidentThreshold == null || 1 &gt;= incidentType/incidentThreshold</from>
+					<to>instance/suppressed</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="1fbff65154154aab90b37a1d0537df61"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>result6fb32ead6abd4f28afe4a7b7544d3893/created</from>
+				<to>activeIncident</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="7b8ace3d498e4166bba454eccb4f475b"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>true</from>
+				<to>trigger</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
+				comment="If it exists already, increase the count"
+				disabled="false"
+				id="799052aa792d4584a577bf3414e0a979"
+				lineNumber="8">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					comment="Increase the count"
+					disabled="false"
+					id="b1590be339d24d10b32697acc3950a1f"
+					lineNumber="9">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="8d5f9a9f4992492aa9444916ebfc1773"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>=activeIncident/incidentCount + 1</from>
+					<to>activeIncident/incidentCount</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					comment="Calculate the suppressed"
+					disabled="false"
+					id="2b395b9de04549d6863b94c1ab5377b0"
+					lineNumber="10">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="42610c0a7ad4485c931032e2acf47dd8"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>=incidentType/incidentThreshold == null || activeIncident/incidentCount &gt;= incidentType/incidentThreshold</from>
+					<to>activeIncident/suppressed</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					comment="If the severity has worsened, update it"
+					disabled="false"
+					id="741d77010d1d4b03877084d71abd24cb"
+					label="input/severity &gt; activeIncident/severity"
+					lineNumber="11">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="a6c3e8e6ac464539bcc49b84b7b0e6f3"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/severity</from>
+					<to>activeIncident/severity</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="96e4a18c3f584d328efd69c276871be6"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>true</from>
+					<to>trigger</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					comment="Update it"
+					disabled="false"
+					id="f6363e616a8e445a989ccfcb8eb72a6f"
+					lineNumber="12">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+						disabled="false"
+						id="c91fa3f5de8b47bc8111c0525e93849d"
+						serviceId="nabu.services.jdbc.Services.update"
+						resultName="resultc99a4f65043b4702833630f207e8e5b2"
+						temporaryMapping="true"
+						x="260"
+						y="136"
+						invocationOrder="0"
+						asynchronous="false"
+						recache="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="0b72044bab744350b73b72bff6991642"
+							mask="false"
+							optional="false"
+							fixedValue="false">
+						<from>activeIncident</from>
+						<to>instances[0]</to>
+					</steps>
+				</steps>
+			</steps>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="b12bb6852f33468c9d2627a79c799676"
+			lineNumber="13">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="25000d52757d4390aedcb2e6686d38ec"
+				serviceId="nabu.frameworks.incident.crud.incidentLog.services.create"
+				resultName="result4b0ebb12562040198679b110a159ea01"
+				temporaryMapping="true"
+				x="217"
+				y="66"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="3b18cd26e72e4c188b952feaabdf7c56"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>activeIncident/id</from>
+				<to>instance/incidentId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="6196270de24642a3852783a46bac5239"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>date</from>
+				<to>instance/created</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="fd437352c4244e28a66f6a2771e4f178"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>occurrence</from>
+				<to>instance/logType</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="b551da30d9254641a95f8d7c4478eb0f"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/title</from>
+				<to>instance/title</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="ae8af4bbe0324d50b2e002148e438d7a"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/description</from>
+				<to>instance/description</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="ab9e69beb4764096b1eac6bb509d0ab5"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/authenticationId</from>
+				<to>instance/authenticationId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="2dd5c70cc95144749c924cbf762235a8"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/instanceId</from>
+				<to>instance/instanceId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="0d34b32c7602466aae00a3b0e776b03f"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/instanceType</from>
+				<to>instance/instanceType</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="fd73c40757314d2ebefb1c4dd7fef00e"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/source</from>
+				<to>instance/source</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="b4cd19e743c541b4aecd3bf7a4a4e4e5"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/data</from>
+				<to>instance/data</to>
+			</steps>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="If we have configured a threshold and it matches exactly, we want to trigger. When windowing reduces the count, we can trigger multiple times for an incident, we'll evaluate this usecase as needed"
+			disabled="false"
+			id="b6a9e8d6432640cfa8c55dd1e64d96e6"
+			label="!trigger &amp;&amp; incidentType/incidentThreshold != null &amp;&amp; activeIncident/incidentCount == incidentType/incidentThreshold"
+			lineNumber="14">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="ef53d80cabb64939bf7dc9d6c6e9aba3"
+				mask="false"
+				optional="false"
+				fixedValue="true">
+			<from>true</from>
+			<to>trigger</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="6a79efaab23c44faa186ffccf5c6084d"
+			label="trigger &amp;&amp; incidentType/incidentCategoryId != null"
+			lineNumber="15">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="6b86a3bb6b0e4f2caa86457931f4c8a1"
+				serviceId="nabu.frameworks.incident.utils.trigger"
+				resultName="resulteac6d17c91cd47a8b621d9006c2ffdb3"
+				temporaryMapping="true"
+				x="198"
+				y="83"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="cca0f0a3b9a742f5b30ad88e77ff624b"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>activeIncident</from>
+				<to>incident</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="f0466ec6b3bf4e06a564a0f8c91fcc17"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>incidentType</from>
+				<to>incidentType</to>
+			</steps>
+		</steps>
+	</steps>
+</sequence>

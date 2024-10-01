@@ -1,0 +1,5 @@
+<structure interface="nabu.frameworks.events.specs.signal" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <field name="incidentType" type="java.lang.String"/>
+</structure>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.data.model.DataModelManager" created="2024-10-01T16:03:48.587+02:00" lastModified="2024-10-01T17:51:37.796+02:00" leaf="true" version="46">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.frameworks.incident.database.types.incident</references>
+    <references>nabu.frameworks.incident.database.types.incidentType</references>
+    <references>nabu.frameworks.incident.database.types.incidentLog</references>
+    <references>nabu.frameworks.incident.database.types.incidentCategory</references>
+    <references>nabu.frameworks.incident.database.types.incidentTrigger</references>
+</node>

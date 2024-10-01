@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-10-01T16:30:34.319+02:00" lastModified="2024-10-01T16:33:25.474+02:00" leaf="true" version="8">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.utils.Date.now</references>
+    <references>java.lang.String</references>
+    <references>nabu.frameworks.incident.crud.incidentType.services.list</references>
+    <references>nabu.frameworks.incident.crud.incidentType.services.create</references>
+    <references>nabu.frameworks.incident.database.types.incidentType</references>
+</node>

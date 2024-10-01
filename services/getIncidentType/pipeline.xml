@@ -1,0 +1,8 @@
+<structure name="pipeline">
+    <structure name="input">
+        <field name="incidentType" type="java.lang.String"/>
+    </structure>
+    <structure name="output">
+        <structure collectionName="incidentTypes" definition="nabu.frameworks.incident.database.types.incidentType" name="incidentType"/>
+    </structure>
+</structure>

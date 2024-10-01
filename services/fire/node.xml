@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-10-01T16:26:13.734+02:00" lastModified="2024-10-01T18:06:51.785+02:00" leaf="true" version="41">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.frameworks.incident.services.getIncidentType</references>
+    <references>nabu.frameworks.incident.utils.trigger</references>
+    <references>be.nabu.utils.cep.api.EventSeverity</references>
+    <references>java.util.Date</references>
+    <references>nabu.utils.Date.now</references>
+    <references>nabu.frameworks.incident.crud.incident.types.output</references>
+    <references>nabu.frameworks.incident.crud.incident.services.create</references>
+    <references>java.util.UUID</references>
+    <references>nabu.frameworks.incident.crud.incident.services.list</references>
+    <references>nabu.services.jdbc.Services.update</references>
+    <references>java.lang.Boolean</references>
+    <references>nabu.frameworks.incident.crud.incidentLog.services.create</references>
+    <references>java.lang.String</references>
+    <references>nabu.frameworks.incident.database.types.incidentType</references>
+</node>

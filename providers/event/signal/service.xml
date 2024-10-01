@@ -1,0 +1,209 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="d2fa99db09a2465bbd9a434c0edc8903"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
+			disabled="false"
+			id="dc74e3af5f3b4c49a6abb2c547d3adc0"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="Classification is the primary incident type"
+				disabled="false"
+				id="794b8f9cccbf4046a6705f4c908481a5"
+				label="input/event/classification != null"
+				lineNumber="3">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="5ffd43cc412e436fb05cbbeae2d88cb2"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/event/classification</from>
+				<to>incidentType</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="If there is a code, we use that instead"
+				disabled="false"
+				id="b2effed406144b5cb61dfac209de16fa"
+				label="input/event/code != null"
+				lineNumber="4">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="dddd12497bca42eba5c04be7177eef9a"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/event/code</from>
+				<to>incidentType</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="38fbcf14d4064d948b975ed09454e3eb"
+				label="input/event/eventName != null"
+				lineNumber="5">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="c0d75beb736b464785fd97446b3009f8"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/event/eventName</from>
+				<to>incidentType</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="Just use &quot;event&quot;"
+				disabled="false"
+				id="c2378f081f15443b93ac2bcf12255376"
+				lineNumber="6">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="4e8b17dfac484edaba8eca912ed70bf6"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>event</from>
+				<to>incidentType</to>
+			</steps>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="e9c4a7494cff4dafa76fa65b5705221c"
+			lineNumber="7">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="e44dbfcc5278443f879835640d091649"
+				serviceId="nabu.frameworks.incident.services.fire"
+				resultName="result30b6dfa5b2b34bcb9a3c16e69909adc4"
+				temporaryMapping="true"
+				x="585"
+				y="112"
+				invocationOrder="1"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="1ef8daab0d6746eea4885a6343477128"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/event/groupKey</from>
+				<to>incidentKey</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="5a413a17f4964a8eaf865cc5bd9a6263"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/event/data</from>
+				<to>data</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="1741577477cf4cd9bdc4a2d9dab501f9"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>resultf2da99f4326a4b04ae0b4cacadaab302/first</from>
+				<to>title</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="afb31f5366c24faeb27eaa31445cfc23"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/event/id</from>
+				<to>instanceId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="27f67e63f765431bb4123152aa6b84de"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>event</from>
+				<to>instanceType</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="0704ebc1632940b4a592e7f2949972f6"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/event/severity</from>
+				<to>severity</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="727a8ef5823743aaabb4c53719ebcddf"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>event</from>
+				<to>source</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="d21ed757c59b4b9a86db968aa448be26"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/event/authenticationId</from>
+				<to>authenticationId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="369edc3868bc43d6ab779be37a1fd699"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/event/stacktrace</from>
+				<to>description</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="e7c735dd2c0f48849e1c859cfe84ba78"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>incidentType</from>
+				<to>incidentType</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="d640d50a17244cb19984e8ae2f25e552"
+				serviceId="nabu.utils.Object.first"
+				resultName="resultf2da99f4326a4b04ae0b4cacadaab302"
+				temporaryMapping="true"
+				x="97"
+				y="85"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="9b39f980af4d4c78b0e4271764b7347b"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/event/message</from>
+				<to>options[1]</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="d2b27929ba0748b090e180efc3131139"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/event/reason</from>
+				<to>options[0]</to>
+			</steps>
+		</steps>
+	</steps>
+</sequence>

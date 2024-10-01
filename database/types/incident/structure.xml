@@ -1,0 +1,12 @@
+<structure collectionName="incidents" name="incident">
+    <field name="id" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" primaryKey="true" type="java.util.UUID"/>
+    <field comment="Each incident has a particular type" foreignKey="nabu.frameworks.incident.database.types.incidentType:id" name="incidentTypeId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+    <field name="started" timezone="UTC" type="java.util.Date"/>
+    <field minOccurs="0" name="stopped" timezone="UTC" type="java.util.Date"/>
+    <field comment="CREATED, ASSIGNED, HANDLED" name="state" type="java.lang.String"/>
+    <field comment="Assigned to an authentication id" minOccurs="0" name="assignedToId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+    <field comment="Each incident of a particular type can have an optional key for grouping purposes. For grouping. If no key is given, there is only one active instance per incident type" minOccurs="0" name="incidentKey" type="java.lang.String"/>
+    <field comment="How often the incident was reported while still ongoing. This is limited to the window for the type (if configured)" name="incidentCount" type="java.lang.Long"/>
+    <field comment="The incident severity" name="severity" type="java.lang.String"/>
+    <field comment="An incident may be suppressed if we consider it not important (yet). E.g when the threshold is not yet reached" name="suppressed" type="java.lang.Boolean"/>
+</structure>

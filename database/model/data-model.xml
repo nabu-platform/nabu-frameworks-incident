@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<dataModel>
+    <entries>
+        <synchronize>true</synchronize>
+        <type>nabu.frameworks.incident.database.types.incident</type>
+        <x>1025</x>
+        <y>93</y>
+    </entries>
+    <entries>
+        <synchronize>true</synchronize>
+        <type>nabu.frameworks.incident.database.types.incidentType</type>
+        <x>441</x>
+        <y>95</y>
+    </entries>
+    <entries>
+        <synchronize>true</synchronize>
+        <type>nabu.frameworks.incident.database.types.incidentLog</type>
+        <x>1526</x>
+        <y>102</y>
+    </entries>
+    <entries>
+        <synchronize>true</synchronize>
+        <x>1006</x>
+        <y>531</y>
+    </entries>
+    <entries>
+        <synchronize>true</synchronize>
+        <type>nabu.frameworks.incident.database.types.incidentCategory</type>
+        <x>268</x>
+        <y>397</y>
+    </entries>
+    <entries>
+        <synchronize>true</synchronize>
+        <type>nabu.frameworks.incident.database.types.incidentTrigger</type>
+        <x>929</x>
+        <y>591</y>
+    </entries>
+</dataModel>

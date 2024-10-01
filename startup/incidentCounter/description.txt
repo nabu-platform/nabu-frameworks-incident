@@ -1,0 +1,1 @@
+Counts the amount of incident occurences that fall within the configured window. If it is reduced to 0, it autocloses the incident.
