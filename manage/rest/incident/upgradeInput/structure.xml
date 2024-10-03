@@ -1,0 +1,3 @@
+<structure name="upgradeInput" superType="nabu.frameworks.incident.manage.rest.incident.handleInput">
+    <field name="severity" type="java.lang.String"/>
+</structure>
