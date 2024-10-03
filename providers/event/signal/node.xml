@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-10-01T17:17:59.721+02:00" lastModified="2024-10-01T17:24:52.678+02:00" leaf="true" version="8">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-10-01T17:17:59.721+02:00" lastModified="2024-10-03T13:55:25.227+02:00" leaf="true" version="19">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
+    <references>nabu.utils.String.join</references>
     <references>nabu.utils.Object.first</references>
     <references>nabu.frameworks.events.database.event</references>
     <references>nabu.frameworks.events.specs.signal</references>

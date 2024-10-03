@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.web.component.WebComponentManager" created="2024-10-02T10:04:13.714+02:00" lastModified="2024-10-03T16:57:09.491+02:00" leaf="true" version="6">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.frameworks.incident.crud.incident</references>
+    <references>nabu.frameworks.incident.crud.incidentCategory</references>
+    <references>nabu.frameworks.incident.crud.incidentLog</references>
+    <references>nabu.frameworks.incident.crud.incidentTrigger</references>
+    <references>nabu.frameworks.incident.crud.incidentType</references>
+    <references>nabu.frameworks.incident.manage.rest.incident.comment</references>
+    <references>nabu.frameworks.incident.manage.rest.incident.unassign</references>
+    <references>nabu.frameworks.incident.manage.rest.incident.handle</references>
+    <references>nabu.frameworks.incident.manage.rest.incident.assign</references>
+    <references>nabu.frameworks.incident.manage.rest.incident.toggleSuppress</references>
+</node>

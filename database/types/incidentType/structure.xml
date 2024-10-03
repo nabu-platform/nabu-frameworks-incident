@@ -5,7 +5,9 @@
     <field comment="Every event rule with a classification (and set to signal) will automatically be able to create incidents." name="name" type="java.lang.String"/>
     <field comment="We can deactivate incidents of a particular type" name="active" type="java.lang.Boolean"/>
     <field comment="It can belong to a category" foreignKey="nabu.frameworks.incident.database.types.incidentCategory:id" minOccurs="0" name="incidentCategoryId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
-    <field comment="A window for an incident. E.g. if no one looks at it within 1 day, it is no longer relevant. We take into account the actual incident count which is checked via the logs to see how many are still within the applicable window" minOccurs="0" name="window" type="be.nabu.libs.types.base.Duration"/>
+    <field comment="A window for an incident. E.g. if no one looks at it within 1 day, it is no longer relevant. We take into account the actual incident count which is checked via the logs to see how many are still within the applicable window" minOccurs="0" name="incidentWindow" type="be.nabu.libs.types.base.Duration"/>
     <field comment="You can provide a description for an incident type, this may help people with solving it." minOccurs="0" name="description" type="java.lang.String"/>
     <field comment="The minimum threshold before we consider it important" minOccurs="0" name="incidentThreshold" type="java.lang.Long"/>
+    <field comment="Some incidents are automatically resolved based on some logic" minOccurs="0" name="resolveServiceId" type="java.lang.String"/>
+    <field minOccurs="0" name="resolveServiceProperties" type="java.lang.String"/>
 </structure>

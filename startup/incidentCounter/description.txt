@@ -1,1 +1,8 @@
 Counts the amount of incident occurences that fall within the configured window. If it is reduced to 0, it autocloses the incident.
+
+There is a tradeoff to be made:
+
+- either we select all occurrence logs regardless of window in a single select, this improves database performance in case of many open incidents, however it may become less then ideal if you ever have a very long running incident
+- we select occurrence logs for each incident according to its window, this will be slower in case of many open incidents but faster in case of long running incidents
+
+In case of low occurrence rates in general it doesn't matter which strategy, in case of high occurrence rates, the chance is likely that we have a few incidents with a lot of logs. So currently we opt for the first approach until we know more about how this will play out.

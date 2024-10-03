@@ -26,8 +26,8 @@
     <entries>
         <synchronize>true</synchronize>
         <type>nabu.frameworks.incident.database.types.incidentCategory</type>
-        <x>268</x>
-        <y>397</y>
+        <x>172</x>
+        <y>530</y>
     </entries>
     <entries>
         <synchronize>true</synchronize>

@@ -2,4 +2,6 @@
     <structure name="input"/>
     <structure name="output"/>
     <field name="incidentType" type="java.lang.String"/>
+    <field maxOccurs="unbounded" name="connectionIds" type="java.lang.String"/>
+    <field name="title" type="java.lang.String"/>
 </structure>

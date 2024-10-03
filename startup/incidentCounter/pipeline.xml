@@ -1,4 +1,10 @@
 <structure name="pipeline">
     <structure name="input"/>
     <structure name="output"/>
+    <field maxOccurs="unbounded" name="connectionIds" type="java.lang.String"/>
+    <structure collectionName="incidents" definition="nabu.frameworks.incident.crud.incident.types.output" enricher="nabu.frameworks.incident.crud.incident.services.list" maxOccurs="unbounded" minOccurs="0" name="activeIncidents" persister="nabu.frameworks.incident.crud.incident.batch.updateAll"/>
+    <field minOccurs="0" name="date" type="java.util.Date"/>
+    <structure definition="java.lang.Object" name="properties"/>
+    <field name="resolved" type="java.lang.Boolean"/>
+    <structure collectionName="incidents" definition="nabu.frameworks.incident.crud.incident.types.output" enricher="nabu.frameworks.incident.crud.incident.services.list" maxOccurs="unbounded" minOccurs="0" name="handledIncidents" persister="nabu.frameworks.incident.crud.incident.batch.updateAll"/>
 </structure>

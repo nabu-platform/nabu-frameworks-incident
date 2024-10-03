@@ -16,4 +16,5 @@
     <structure collectionName="incidents" definition="nabu.frameworks.incident.crud.incident.types.output" enricher="nabu.frameworks.incident.crud.incident.services.list" minOccurs="0" name="activeIncident" persister="nabu.frameworks.incident.crud.incident.batch.updateAll"/>
     <field name="trigger" type="java.lang.Boolean"/>
     <field minOccurs="0" name="date" type="java.util.Date"/>
+    <field maxOccurs="unbounded" name="connectionIds" type="java.lang.String"/>
 </structure>

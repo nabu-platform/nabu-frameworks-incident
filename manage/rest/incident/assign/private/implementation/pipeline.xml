@@ -1,0 +1,5 @@
+<structure interface="nabu.frameworks.incident.manage.rest.incident.assign:api" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure collectionName="incidents" definition="nabu.frameworks.incident.crud.incident.types.output" enricher="nabu.frameworks.incident.crud.incident.services.list" name="incident" persister="nabu.frameworks.incident.crud.incident.batch.updateAll"/>
+</structure>

@@ -26,6 +26,15 @@
 				<from>input/incidentType</from>
 				<to>filter/name[0]</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="e633364a51fd4d31a991a6ddcf06d4b2"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/connectionId</from>
+				<to>connectionId</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
@@ -67,6 +76,15 @@
 						fixedValue="false">
 					<from>input/incidentType</from>
 					<to>filter/name[0]</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="b10e96ef27614db29b52d8e5cdc5b326"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/connectionId</from>
+					<to>connectionId</to>
 				</steps>
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
@@ -130,6 +148,15 @@
 						fixedValue="false">
 					<from>resultb4c047517d5a4908ad5ddd4d349278d9/date</from>
 					<to>instance/modified</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="658f166a0b084647b7f3a04e8ba82d0e"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/connectionId</from>
+					<to>connectionId</to>
 				</steps>
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"

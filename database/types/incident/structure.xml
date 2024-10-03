@@ -1,6 +1,7 @@
 <structure collectionName="incidents" name="incident">
     <field name="id" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" primaryKey="true" type="java.util.UUID"/>
     <field comment="Each incident has a particular type" foreignKey="nabu.frameworks.incident.database.types.incidentType:id" name="incidentTypeId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+    <field comment="When was it last modified" name="modified" timezone="UTC" type="java.util.Date"/>
     <field name="started" timezone="UTC" type="java.util.Date"/>
     <field minOccurs="0" name="stopped" timezone="UTC" type="java.util.Date"/>
     <field comment="CREATED, ASSIGNED, HANDLED" name="state" type="java.lang.String"/>

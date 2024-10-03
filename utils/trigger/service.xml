@@ -42,6 +42,15 @@
 				<from>true</from>
 				<to>filter/active</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="40b6869033794a82bf52295a7dfa7afd"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/connectionId</from>
+				<to>connectionId</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
@@ -262,7 +271,20 @@
 							<from>properties</from>
 							<to>properties</to>
 						</steps>
+						<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+								disabled="false"
+								id="adf3f5c1147848fd9a9ef92f49bc8b98"
+								mask="false"
+								optional="false"
+								fixedValue="false">
+							<from>input/connectionId</from>
+							<to>connectionId</to>
+						</steps>
 					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Drop"
+							disabled="false"
+							id="4247f38194a64d0db10cefeb99116e35"
+							path="properties" xsi:nil="true"/>
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 						disabled="false"
@@ -368,6 +390,15 @@
 								fixedValue="false">
 							<from>result139bfda436574086827acccec8693355/token/authenticationId</from>
 							<to>instance/authenticationId</to>
+						</steps>
+						<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+								disabled="false"
+								id="d8020d82f6aa4a118192ce7d9770fb75"
+								mask="false"
+								optional="false"
+								fixedValue="false">
+							<from>input/connectionId</from>
+							<to>connectionId</to>
 						</steps>
 					</steps>
 					<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
@@ -563,6 +594,15 @@
 									fixedValue="false">
 								<from>resultfb411d0c43174921b0213afce3e48bc9/correlationId</from>
 								<to>instance/correlationId</to>
+							</steps>
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="c0e81b33a1db4d6fa538a54e40328b16"
+									mask="false"
+									optional="false"
+									fixedValue="false">
+								<from>input/connectionId</from>
+								<to>connectionId</to>
 							</steps>
 						</steps>
 						<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"

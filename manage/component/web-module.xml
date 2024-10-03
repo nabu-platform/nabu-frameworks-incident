@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<webModule>
+    <webFragments>nabu.frameworks.incident.crud.incident</webFragments>
+    <webFragments>nabu.frameworks.incident.crud.incidentCategory</webFragments>
+    <webFragments>nabu.frameworks.incident.crud.incidentLog</webFragments>
+    <webFragments>nabu.frameworks.incident.crud.incidentTrigger</webFragments>
+    <webFragments>nabu.frameworks.incident.crud.incidentType</webFragments>
+    <webFragments>nabu.frameworks.incident.manage.rest.incident.comment</webFragments>
+    <webFragments>nabu.frameworks.incident.manage.rest.incident.unassign</webFragments>
+    <webFragments>nabu.frameworks.incident.manage.rest.incident.handle</webFragments>
+    <webFragments>nabu.frameworks.incident.manage.rest.incident.assign</webFragments>
+    <webFragments>nabu.frameworks.incident.manage.rest.incident.toggleSuppress</webFragments>
+</webModule>

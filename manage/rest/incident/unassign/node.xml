@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2024-10-03T14:23:28.079+02:00" lastModified="2024-10-03T17:32:59.773+02:00" leaf="true" version="23">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.utils.Date.now</references>
+    <references>nabu.frameworks.incident.crud.incident.types.output</references>
+    <references>java.util.UUID</references>
+    <references>nabu.frameworks.incident.manage.rest.incident.handleInput</references>
+    <references>be.nabu.libs.authentication.api.Token</references>
+    <references>nabu.utils.Server.getServerName</references>
+    <references>nabu.services.jdbc.Services.update</references>
+    <references>nabu.frameworks.incident.crud.incident.services.get</references>
+    <references>nabu.utils.Runtime.getCorrelationId</references>
+    <references>nabu.utils.Object.last</references>
+    <references>nabu.frameworks.incident.crud.incidentLog.services.create</references>
+</node>
