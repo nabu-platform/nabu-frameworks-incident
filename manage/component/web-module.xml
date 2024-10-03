@@ -10,4 +10,5 @@
     <webFragments>nabu.frameworks.incident.manage.rest.incident.handle</webFragments>
     <webFragments>nabu.frameworks.incident.manage.rest.incident.assign</webFragments>
     <webFragments>nabu.frameworks.incident.manage.rest.incident.toggleSuppress</webFragments>
+    <webFragments>nabu.frameworks.incident.manage.rest.incident.upgrade</webFragments>
 </webModule>
