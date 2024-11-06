@@ -36,15 +36,6 @@
 			<from>result71da2ae264cc42b8a42b76e296fbfe20/result</from>
 			<to>incident</to>
 		</steps>
-		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-				disabled="false"
-				id="f8b6e19ad7794a68887226c9ed80ab9b"
-				mask="false"
-				optional="false"
-				fixedValue="false">
-			<from>result71da2ae264cc42b8a42b76e296fbfe20/result/assignedToId</from>
-			<to>originalAssignedId</to>
-		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
 			disabled="false"

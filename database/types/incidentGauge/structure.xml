@@ -1,0 +1,12 @@
+<structure collectionName="incidentGauges" name="incidentGauge">
+    <field name="id" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" primaryKey="true" type="java.util.UUID"/>
+    <field foreignKey="nabu.frameworks.incident.database.types.incidentType:id" name="incidentTypeId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+    <field comment="How often should this gauge be called? If no interval, it is called every time the service computes gauges which is every minute. The minimum granularity is minutes" minOccurs="0" name="pollInterval" type="be.nabu.libs.types.base.Duration"/>
+    <field comment="A name for this gauge" name="name" type="java.lang.String"/>
+    <field comment="A human readable description of what this gauge is supposed to do" minOccurs="0" name="description" type="java.lang.String"/>
+    <field comment="It is either &quot;service&quot; or &quot;script&quot;. Either way you must implement the gauge specification. The script can be configured purely in the frontend though without requiring code deployment." minOccurs="0" name="gaugeType" type="java.lang.String"/>
+    <field comment="The content of the gauge, for a service this is the service id, for a script this is the actual content" minOccurs="0" name="gaugeContent" type="java.lang.String"/>
+    <field comment="For a service you can set additional configuration options" minOccurs="0" name="gaugeProperties" type="java.lang.String"/>
+    <field name="active" type="java.lang.Boolean"/>
+    <field minOccurs="0" name="lastRun" timezone="UTC" type="java.util.Date"/>
+</structure>

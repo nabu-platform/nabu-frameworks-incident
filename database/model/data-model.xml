@@ -15,8 +15,8 @@
     <entries>
         <synchronize>true</synchronize>
         <type>nabu.frameworks.incident.database.types.incidentLog</type>
-        <x>1526</x>
-        <y>102</y>
+        <x>1616</x>
+        <y>83</y>
     </entries>
     <entries>
         <synchronize>true</synchronize>
@@ -32,7 +32,25 @@
     <entries>
         <synchronize>true</synchronize>
         <type>nabu.frameworks.incident.database.types.incidentTrigger</type>
-        <x>929</x>
-        <y>591</y>
+        <x>305</x>
+        <y>722</y>
+    </entries>
+    <entries>
+        <synchronize>true</synchronize>
+        <type>nabu.frameworks.incident.database.types.incidentGauge</type>
+        <x>1026</x>
+        <y>417</y>
+    </entries>
+    <entries>
+        <synchronize>true</synchronize>
+        <type>nabu.frameworks.incident.database.types.incidentGaugeLog</type>
+        <x>1620</x>
+        <y>444</y>
+    </entries>
+    <entries>
+        <synchronize>true</synchronize>
+        <type>nabu.frameworks.incident.database.types.incidentAction</type>
+        <x>1026</x>
+        <y>707</y>
     </entries>
 </dataModel>

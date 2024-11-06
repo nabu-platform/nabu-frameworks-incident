@@ -11,4 +11,9 @@
     <webFragments>nabu.frameworks.incident.manage.rest.incident.assign</webFragments>
     <webFragments>nabu.frameworks.incident.manage.rest.incident.toggleSuppress</webFragments>
     <webFragments>nabu.frameworks.incident.manage.rest.incident.upgrade</webFragments>
+    <webFragments>nabu.frameworks.incident.crud.incidentGauge</webFragments>
+    <webFragments>nabu.frameworks.incident.manage.rest.gauge.test</webFragments>
+    <webFragments>nabu.frameworks.incident.manage.rest.category.toggleDefault</webFragments>
+    <webFragments>nabu.frameworks.incident.crud.incidentGaugeLog</webFragments>
+    <webFragments>nabu.frameworks.incident.manage.rest.incident.create</webFragments>
 </webModule>

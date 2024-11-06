@@ -30,8 +30,23 @@
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
-			id="e8efce39f17a41e094bdaf73209232f5"
+			id="c22fe1cff7e04d1982587b581c0faacb"
+			label="input/connectionId != null"
 			lineNumber="3">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="93a4ad3f0a7846f7aa96dbca127328f8"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>input/connectionId</from>
+			<to>connectionIds[0]</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="e8efce39f17a41e094bdaf73209232f5"
+			lineNumber="4">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="20cf190da83149adb0d3d23e5eaa6d41"
@@ -77,14 +92,14 @@
 			disabled="false"
 			id="f1d8288c479149deb9ebe6ae65ab9747"
 			label="!incidentType/active"
-			lineNumber="4">
+			lineNumber="5">
 		<count>1</count>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Get the most recent incident (there should not be multiple but hey...)"
 			disabled="false"
 			id="32a115761f7048678a423a74b7fdbef4"
-			lineNumber="5">
+			lineNumber="6">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="be9adabe6afd4a8e9ae9be3920014841"
@@ -196,7 +211,7 @@
 			disabled="false"
 			id="37a0a04cbf7b40078417611066578b79"
 			label="input/severity == null"
-			lineNumber="6">
+			lineNumber="7">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
 				id="9b8a2815344f42e5bcd80439de1e69fc"
@@ -210,13 +225,13 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
 			disabled="false"
 			id="48a559ea46904c0fb99931741c733297"
-			lineNumber="7">
+			lineNumber="8">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				comment="If there is no incident yet, create it"
 				disabled="false"
 				id="aaba35459b1b4e4692325deb03841a18"
 				label="!activeIncident"
-				lineNumber="8">
+				lineNumber="9">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 					disabled="false"
 					id="1f371338ef4e4865a020343550222fb4"
@@ -333,12 +348,12 @@
 				comment="If it exists already, increase the count"
 				disabled="false"
 				id="799052aa792d4584a577bf3414e0a979"
-				lineNumber="9">
+				lineNumber="10">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 					comment="Increase the count"
 					disabled="false"
 					id="b1590be339d24d10b32697acc3950a1f"
-					lineNumber="10">
+					lineNumber="11">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 						disabled="false"
 						id="8d5f9a9f4992492aa9444916ebfc1773"
@@ -353,7 +368,7 @@
 					comment="Calculate the suppressed"
 					disabled="false"
 					id="2b395b9de04549d6863b94c1ab5377b0"
-					lineNumber="11">
+					lineNumber="12">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 						disabled="false"
 						id="42610c0a7ad4485c931032e2acf47dd8"
@@ -378,7 +393,7 @@
 					disabled="false"
 					id="741d77010d1d4b03877084d71abd24cb"
 					label="input/severity &gt; activeIncident/severity"
-					lineNumber="12">
+					lineNumber="13">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 						disabled="false"
 						id="a6c3e8e6ac464539bcc49b84b7b0e6f3"
@@ -402,7 +417,7 @@
 					comment="Update it"
 					disabled="false"
 					id="f6363e616a8e445a989ccfcb8eb72a6f"
-					lineNumber="13">
+					lineNumber="14">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 						disabled="false"
 						id="c91fa3f5de8b47bc8111c0525e93849d"
@@ -439,7 +454,7 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="b12bb6852f33468c9d2627a79c799676"
-			lineNumber="14">
+			lineNumber="15">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="25000d52757d4390aedcb2e6686d38ec"
@@ -599,7 +614,7 @@
 			disabled="false"
 			id="b6a9e8d6432640cfa8c55dd1e64d96e6"
 			label="!trigger &amp;&amp; incidentType/incidentThreshold != null &amp;&amp; activeIncident/incidentCount == incidentType/incidentThreshold"
-			lineNumber="15">
+			lineNumber="16">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
 				id="ef53d80cabb64939bf7dc9d6c6e9aba3"
@@ -613,8 +628,8 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="6a79efaab23c44faa186ffccf5c6084d"
-			label="trigger &amp;&amp; incidentType/incidentCategoryId != null"
-			lineNumber="16">
+			label="trigger"
+			lineNumber="17">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="6b86a3bb6b0e4f2caa86457931f4c8a1"

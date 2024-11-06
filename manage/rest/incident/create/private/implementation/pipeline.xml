@@ -1,0 +1,5 @@
+<structure interface="$self:api" name="pipeline">
+    <structure name="input" validate="true"/>
+    <structure name="output"/>
+    <structure collectionName="incidentTypes" definition="nabu.frameworks.incident.crud.incidentType.types.output" enricher="nabu.frameworks.incident.crud.incidentType.services.list" name="incidentType" persister="nabu.frameworks.incident.crud.incidentType.batch.updateAll"/>
+</structure>

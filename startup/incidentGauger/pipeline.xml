@@ -1,0 +1,15 @@
+<structure name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <field maxOccurs="unbounded" name="connectionIds" type="java.lang.String"/>
+    <structure definition="nabu.frameworks.incident.specs.gauge:output" name="gaugeOutput"/>
+    <structure collectionName="incidentGauges" definition="nabu.frameworks.incident.crud.incidentGauge.types.output" enricher="nabu.frameworks.incident.crud.incidentGauge.services.list" maxOccurs="unbounded" minOccurs="0" name="gauges" persister="nabu.frameworks.incident.crud.incidentGauge.batch.updateAll"/>
+    <field minOccurs="0" name="serializedData" type="java.lang.String"/>
+    <structure definition="nabu.frameworks.incident.specs.gauge:input" name="gaugeInput"/>
+    <field minOccurs="0" name="started" type="java.util.Date"/>
+    <structure collectionName="incidentGaugeLogs" definition="nabu.frameworks.incident.crud.incidentGaugeLog.types.output" enricher="nabu.frameworks.incident.crud.incidentGaugeLog.services.list" name="createdLog" persister="nabu.frameworks.incident.crud.incidentGaugeLog.batch.updateAll"/>
+    <field name="locked" type="java.lang.Boolean"/>
+    <field minOccurs="0" name="lastRunBefore" type="java.util.Date"/>
+    <field minOccurs="0" name="now" type="java.util.Date"/>
+    <field minOccurs="0" name="runNext" type="java.util.Date"/>
+</structure>

@@ -38,15 +38,6 @@
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
-				id="f8b6e19ad7794a68887226c9ed80ab9b"
-				mask="false"
-				optional="false"
-				fixedValue="false">
-			<from>result71da2ae264cc42b8a42b76e296fbfe20/result/assignedToId</from>
-			<to>originalAssignedId</to>
-		</steps>
-		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-				disabled="false"
 				id="3782f5f88f2d40c1a529e669fc495038"
 				mask="false"
 				optional="false"
@@ -239,15 +230,6 @@
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
-					id="ea47d2cc29424148b0068e65b700831f"
-					mask="false"
-					optional="false"
-					fixedValue="true">
-				<from>unassign</from>
-				<to>instance/logType</to>
-			</steps>
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
 					id="eacae2c35c894cd29d4dd2466eb72dde"
 					mask="false"
 					optional="false"
@@ -299,6 +281,15 @@
 					fixedValue="false">
 				<from>description</from>
 				<to>instance/description</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="f1592579f93948519c7e2089cc3a38c7"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>logType</from>
+				<to>instance/logType</to>
 			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"

@@ -1,21 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-10-01T16:24:23.333+02:00" lastModified="2024-10-02T10:34:41.502+02:00" leaf="true" version="30">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-10-01T16:24:23.333+02:00" lastModified="2024-10-08T09:16:57.280+02:00" leaf="true" version="42">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
+    <references>nabu.frameworks.incident.specs.resolve:output</references>
     <references>nabu.utils.reflection.properties.unmarshalServiceInput</references>
     <references>nabu.frameworks.incident.crud.incidentLog.services.list</references>
     <references>java.util.Date</references>
     <references>nabu.utils.Date.now</references>
     <references>nabu.frameworks.incident.crud.incident.types.output</references>
     <references>nabu.frameworks.incident.utils.getSupportedConnections</references>
+    <references>nabu.services.glue.Services.evaluate</references>
     <references>nabu.frameworks.incident.crud.incident.services.list</references>
     <references>nabu.services.jdbc.Services.update</references>
+    <references>nabu.utils.Lock.tryLock</references>
     <references>java.lang.Boolean</references>
     <references>java.lang.Object</references>
     <references>java.lang.String</references>
     <references>nabu.utils.Server.sleep</references>
+    <references>nabu.frameworks.incident.specs.resolve:input</references>
     <references>nabu.utils.Date.incrementDuration</references>
     <references>nabu.frameworks.incident.specs.resolve</references>
+    <references>nabu.utils.reflection.Type.mask</references>
 </node>

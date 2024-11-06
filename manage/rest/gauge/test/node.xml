@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2024-10-04T15:19:51.570+02:00" lastModified="2024-10-04T15:24:35.307+02:00" leaf="true" version="14">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.utils.reflection.properties.unmarshalServiceInput</references>
+    <references>nabu.frameworks.incident.specs.gauge:output</references>
+    <references>nabu.services.glue.Services.evaluate</references>
+    <references>nabu.frameworks.incident.crud.incidentGauge.services.get</references>
+    <references>nabu.frameworks.incident.specs.gauge</references>
+    <references>nabu.frameworks.incident.manage.rest.gauge.testOutput</references>
+    <references>nabu.frameworks.incident.specs.gauge:input</references>
+    <references>nabu.data.json.Services.marshal</references>
+    <references>nabu.frameworks.incident.crud.incidentGauge.types.output</references>
+    <references>nabu.utils.reflection.Type.mask</references>
+    <references>nabu.utils.Stream.toString</references>
+</node>

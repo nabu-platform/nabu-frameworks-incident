@@ -5,6 +5,8 @@
     <structure collectionName="incidents" definition="nabu.frameworks.incident.crud.incident.types.output" enricher="nabu.frameworks.incident.crud.incident.services.list" maxOccurs="unbounded" minOccurs="0" name="activeIncidents" persister="nabu.frameworks.incident.crud.incident.batch.updateAll"/>
     <field minOccurs="0" name="date" type="java.util.Date"/>
     <structure definition="java.lang.Object" name="properties"/>
-    <field name="resolved" type="java.lang.Boolean"/>
     <structure collectionName="incidents" definition="nabu.frameworks.incident.crud.incident.types.output" enricher="nabu.frameworks.incident.crud.incident.services.list" maxOccurs="unbounded" minOccurs="0" name="handledIncidents" persister="nabu.frameworks.incident.crud.incident.batch.updateAll"/>
+    <field name="locked" type="java.lang.Boolean"/>
+    <structure definition="nabu.frameworks.incident.specs.resolve:input" name="resolveInput"/>
+    <structure definition="nabu.frameworks.incident.specs.resolve:output" name="resolveOutput"/>
 </structure>

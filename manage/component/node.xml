@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.web.component.WebComponentManager" created="2024-10-02T10:04:13.714+02:00" lastModified="2024-10-03T17:51:05.527+02:00" leaf="true" version="7">
+<node artifactManager="be.nabu.eai.module.web.component.WebComponentManager" created="2024-10-02T10:04:13.714+02:00" lastModified="2024-10-11T09:08:08.291+02:00" leaf="true" version="12">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
@@ -15,4 +15,9 @@
     <references>nabu.frameworks.incident.manage.rest.incident.assign</references>
     <references>nabu.frameworks.incident.manage.rest.incident.toggleSuppress</references>
     <references>nabu.frameworks.incident.manage.rest.incident.upgrade</references>
+    <references>nabu.frameworks.incident.crud.incidentGauge</references>
+    <references>nabu.frameworks.incident.manage.rest.gauge.test</references>
+    <references>nabu.frameworks.incident.manage.rest.category.toggleDefault</references>
+    <references>nabu.frameworks.incident.crud.incidentGaugeLog</references>
+    <references>nabu.frameworks.incident.manage.rest.incident.create</references>
 </node>

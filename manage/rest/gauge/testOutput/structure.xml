@@ -1,0 +1,4 @@
+<structure name="testOutput">
+    <field minOccurs="0" name="severity" type="java.lang.String"/>
+    <field minOccurs="0" name="data" type="java.lang.String"/>
+</structure>

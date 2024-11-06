@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.startup.StartupServiceManager" created="2024-10-02T09:11:16.241+02:00" lastModified="2024-10-04T10:53:46.965+02:00" leaf="true" version="6">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.frameworks.incident.startup.incidentGauger</references>
+</node>

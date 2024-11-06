@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2024-10-11T09:02:56.929+02:00" lastModified="2024-10-11T09:08:00.330+02:00" leaf="true" version="13">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.frameworks.incident.manage.rest.incident.createInput</references>
+    <references>nabu.frameworks.incident.crud.incidentType.services.get</references>
+    <references>nabu.frameworks.incident.crud.incidentType.types.output</references>
+    <references>nabu.frameworks.incident.services.fire</references>
+    <references>be.nabu.libs.authentication.api.Token</references>
+</node>

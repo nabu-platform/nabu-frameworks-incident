@@ -1,0 +1,383 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="00bc4598989b4607b50cd731584d6409"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="824615136b284f9c8d2188afd8eb0cc9"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="7114ee95164d40bbafafa0db535ad694"
+				serviceId="nabu.frameworks.incident.crud.incidentGauge.services.get"
+				resultName="resultd5fb93b0f02f4918a81a49ba59c26425"
+				temporaryMapping="true"
+				x="318"
+				y="50"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="38e56ab8bb324d7b90d6d3adadee2615"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/path/incidentGaugeId</from>
+				<to>id</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="fc53862413f54d49b2b76e8be2b67f00"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultd5fb93b0f02f4918a81a49ba59c26425/result</from>
+			<to>gauge</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+			disabled="false"
+			id="643bdb2373a04bc48baa9f842f96bb92"
+			label="!gauge"
+			lineNumber="3"
+			whitelist="false" xsi:nil="true"/>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="Map gauge input"
+			disabled="false"
+			id="5fa2881f0a0c4c508558f63b94fc1db1"
+			lineNumber="4">
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
+			disabled="false"
+			id="674a9c19ebb5448080313be280fc5fac"
+			lineNumber="5"
+			query="gauge/gaugeType">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
+				disabled="false"
+				id="d37b2de6c0ad4bc3abe8f1ee3df7e3df"
+				label="&quot;service&quot;"
+				lineNumber="6">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					disabled="false"
+					id="5d1b30eff14a4a2ca9286ab368291ea3"
+					label="gauge/gaugeProperties != null"
+					lineNumber="7">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+						disabled="false"
+						id="2130d38d112e4a3cb02f586f2f809f6c"
+						serviceId="nabu.utils.reflection.properties.unmarshalServiceInput"
+						resultName="resultf6a7a14a8aca42eb8cf5c6816415686a"
+						temporaryMapping="true"
+						x="298"
+						y="75"
+						invocationOrder="0"
+						asynchronous="false"
+						recache="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="104882ecbafe424297fa9291e62d2bee"
+							mask="false"
+							optional="false"
+							fixedValue="false">
+						<from>gauge/gaugeProperties</from>
+						<to>properties</to>
+					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="7c6d27d13e8e4bd99375b50465278cd9"
+							mask="false"
+							optional="false"
+							fixedValue="false">
+						<from>gauge/gaugeContent</from>
+						<to>serviceId</to>
+					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="79259ad2adc14a15b3e9809d2eddd6b2"
+							mask="false"
+							optional="false"
+							fixedValue="true">
+						<from>properties</from>
+						<to>field</to>
+					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="b4d693e1834c456c88dc6d8369517a43"
+							mask="false"
+							optional="false"
+							fixedValue="true">
+						<from>true</from>
+						<to>asKeyValues</to>
+					</steps>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="2e497b800a7c42158f377288294fdf70"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>resultf6a7a14a8aca42eb8cf5c6816415686a/properties</from>
+					<to>gaugeInput/properties</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					disabled="false"
+					id="2dd92f72a44b4d1083ffd4a80aec9f7b"
+					lineNumber="8">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+						disabled="false"
+						id="e8bf4d3fb4554857b8cf4c2c583b4b3f"
+						serviceId="nabu.frameworks.incident.specs.gauge"
+						resultName="resultbaafa5b945f647fab5b2090866ab782e"
+						temporaryMapping="true"
+						x="327"
+						y="76"
+						invocationOrder="0"
+						asynchronous="false"
+						recache="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="1b7e44b1f05c42eab4d9b1ecba4168df"
+							mask="false"
+							optional="false"
+							fixedValue="false">
+						<from>gaugeInput/connectionId</from>
+						<to>connectionId</to>
+					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="2f3e17be1b7e43ef9175e1c96fd1248a"
+							mask="false"
+							optional="false"
+							fixedValue="false">
+						<from>gaugeInput/properties</from>
+						<to>properties</to>
+					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="0d04c606393447d4bb6c6d59a718b829"
+							mask="false"
+							optional="false"
+							fixedValue="false">
+						<from>gaugeInput/useAsContext</from>
+						<to>useAsContext</to>
+					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="aabee932dcd5442d8e0f79a9b810ba18"
+							mask="false"
+							optional="false"
+							fixedValue="false">
+						<from>gauge/gaugeContent</from>
+						<to>implementationId</to>
+					</steps>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="6f8e8d82a92d4dfd9f17b3f99cc04aa2"
+						mask="true"
+						optional="false"
+						fixedValue="false">
+					<from>resultbaafa5b945f647fab5b2090866ab782e</from>
+					<to>gaugeOutput</to>
+				</steps>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
+				disabled="false"
+				id="c1ef06d270264340ab8d8561a66e64ac"
+				label="&quot;script&quot;"
+				lineNumber="9">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					disabled="false"
+					id="ddeda0afb4cf41a6bec21fb812c41b21"
+					lineNumber="10">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+						disabled="false"
+						id="6ab0d5b55af64a12850111ad9067b76b"
+						serviceId="nabu.services.glue.Services.evaluate"
+						resultName="result12eae516f5eb45f795e0cb3a3ff8eacc"
+						temporaryMapping="true"
+						x="76"
+						y="81"
+						invocationOrder="0"
+						asynchronous="false"
+						recache="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="dd7b7d7e441e4518acf22cc7c0ff01a4"
+							mask="false"
+							optional="false"
+							fixedValue="false">
+						<from>gauge/gaugeContent</from>
+						<to>rule</to>
+					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="ab9fb94d05c14633b60b9fb8ad5b6d88"
+							mask="false"
+							optional="false"
+							fixedValue="false">
+						<from>gaugeInput</from>
+						<to>context[0]</to>
+					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="c8596d1886d747d6bc29ec72c127950c"
+							mask="false"
+							optional="false"
+							fixedValue="true">
+						<from>true</from>
+						<to>returnPipeline</to>
+					</steps>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+						disabled="false"
+						id="7cffb6f0d4f14096b39d5d3c08396458"
+						serviceId="nabu.utils.reflection.Type.mask"
+						resultName="resulta89e76cb66ae486dae8b26c05be95b8c"
+						temporaryMapping="true"
+						x="503"
+						y="262"
+						invocationOrder="1"
+						asynchronous="false"
+						recache="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="47c566a01f2a4822acd68158c8fa04b0"
+							mask="false"
+							optional="false"
+							fixedValue="false">
+						<from>result12eae516f5eb45f795e0cb3a3ff8eacc/response</from>
+						<to>instance</to>
+					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="59f95296d6ba40a1b4765c6237257051"
+							mask="false"
+							optional="false"
+							fixedValue="true">
+						<from>nabu.frameworks.incident.specs.gauge:output</from>
+						<to>type</to>
+					</steps>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="d22bb2101a594a8493f4f9df0d00163d"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>resulta89e76cb66ae486dae8b26c05be95b8c/masked</from>
+					<to>gaugeOutput</to>
+				</steps>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+				disabled="false"
+				id="f836f17692db4671aa44c57fff6c7563"
+				lineNumber="11"
+				message="Unknown type"
+				whitelist="false" xsi:nil="true"/>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="Map main"
+			disabled="false"
+			id="7d8e4680e75244c08ff6415e563357d8"
+			lineNumber="12">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="6072329be3724906b6f5dc8502bb5e5e"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>gaugeOutput/severity</from>
+			<to>output/content/severity</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="559e2c99af7240e7897e80fc1bb8fa52"
+			label="gaugeOutput/data != null"
+			lineNumber="13">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="02424b00593948cab96830fad041b01e"
+				serviceId="nabu.data.json.Services.marshal"
+				resultName="result154eba174b03479896da557eb17e3026"
+				temporaryMapping="true"
+				x="113"
+				y="97"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="f3c292b2e67c4c5e9bcc6b61299feae5"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>UTF-8</from>
+				<to>charset</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="29c707d21091433188ef9383567a59b4"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>true</from>
+				<to>prettyPrint</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="6561e1e2a6064ad9938a3361e9e5f305"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>gaugeOutput/data</from>
+				<to>data</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="b76747d515a24f04a345f74401b22e47"
+				serviceId="nabu.utils.Stream.toString"
+				resultName="result9ba66c0e58b54536a9e669d7711512f3"
+				temporaryMapping="true"
+				x="566"
+				y="196"
+				invocationOrder="1"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="cb0d973284b94b07bc26ee0336264fca"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>result154eba174b03479896da557eb17e3026/marshalled</from>
+				<to>stream</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="963f532c18354219a2182fd70393c111"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>UTF-8</from>
+				<to>charset</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="0e577aa8a0b64b76ae9ecd3f3f248b83"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result9ba66c0e58b54536a9e669d7711512f3/string</from>
+			<to>output/content/data</to>
+		</steps>
+	</steps>
+</sequence>

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2024-10-03T14:23:28.079+02:00" lastModified="2024-10-03T16:56:30.930+02:00" leaf="true" version="27">
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2024-10-03T14:23:28.079+02:00" lastModified="2024-10-04T17:20:05.715+02:00" leaf="true" version="28">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
     <references>nabu.utils.Date.now</references>
     <references>nabu.frameworks.incident.crud.incident.types.output</references>
-    <references>java.util.UUID</references>
     <references>nabu.frameworks.incident.manage.rest.incident.handleInput</references>
     <references>be.nabu.libs.authentication.api.Token</references>
     <references>nabu.utils.Server.getServerName</references>

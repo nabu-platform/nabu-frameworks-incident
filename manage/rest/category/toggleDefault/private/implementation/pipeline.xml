@@ -1,0 +1,6 @@
+<structure interface="nabu.frameworks.incident.manage.rest.category.toggleDefault:api" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure collectionName="incidentCategories" definition="nabu.frameworks.incident.crud.incidentCategory.types.output" enricher="nabu.frameworks.incident.crud.incidentCategory.services.list" maxOccurs="unbounded" minOccurs="0" name="defaultCategories" persister="nabu.frameworks.incident.crud.incidentCategory.batch.updateAll"/>
+    <structure collectionName="incidentCategories" definition="nabu.frameworks.incident.crud.incidentCategory.types.output" enricher="nabu.frameworks.incident.crud.incidentCategory.services.list" name="currentCategory" persister="nabu.frameworks.incident.crud.incidentCategory.batch.updateAll"/>
+</structure>

@@ -1,0 +1,7 @@
+<structure interface="nabu.frameworks.incident.manage.rest.gauge.test:api" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure collectionName="incidentGauges" definition="nabu.frameworks.incident.crud.incidentGauge.types.output" enricher="nabu.frameworks.incident.crud.incidentGauge.services.list" name="gauge" persister="nabu.frameworks.incident.crud.incidentGauge.batch.updateAll"/>
+    <structure definition="nabu.frameworks.incident.specs.gauge:input" name="gaugeInput"/>
+    <structure definition="nabu.frameworks.incident.specs.gauge:output" name="gaugeOutput"/>
+</structure>

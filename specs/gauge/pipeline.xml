@@ -1,0 +1,10 @@
+<structure name="pipeline">
+    <structure name="input">
+        <field minOccurs="0" name="connectionId" type="java.lang.String"/>
+        <structure definition="java.lang.Object" minOccurs="0" name="properties"/>
+    </structure>
+    <structure name="output">
+        <field comment="Once a severity is filled in, an incident will be created" minOccurs="0" name="severity" type="be.nabu.utils.cep.api.EventSeverity"/>
+        <structure comment="Additional metadata that is logged" definition="java.lang.Object" minOccurs="0" name="data"/>
+    </structure>
+</structure>

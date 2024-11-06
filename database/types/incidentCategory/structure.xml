@@ -1,4 +1,5 @@
 <structure collectionName="incidentCategories" comment="A logical grouping of incident types, specifically for rules concerning assignment, notification.." name="incidentCategory">
     <field name="id" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" primaryKey="true" type="java.util.UUID"/>
     <field name="name" type="java.lang.String"/>
+    <field comment="Whether or not this is the default category. This means new incident types are automatically linked here. New incidents linked to a type without category can also reuse the configuration for this category." name="defaultCategory" type="java.lang.Boolean"/>
 </structure>

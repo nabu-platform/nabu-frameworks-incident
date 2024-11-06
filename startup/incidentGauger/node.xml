@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-10-04T09:07:41.001+02:00" lastModified="2024-10-04T15:19:14.047+02:00" leaf="true" version="47">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.utils.Runtime.summarizeException</references>
+    <references>nabu.utils.reflection.properties.unmarshalServiceInput</references>
+    <references>nabu.frameworks.incident.specs.gauge:output</references>
+    <references>java.util.Date</references>
+    <references>nabu.utils.Date.now</references>
+    <references>nabu.frameworks.incident.utils.getSupportedConnections</references>
+    <references>nabu.services.glue.Services.evaluate</references>
+    <references>nabu.frameworks.incident.crud.incidentGaugeLog.services.create</references>
+    <references>nabu.frameworks.incident.services.fire</references>
+    <references>nabu.frameworks.incident.specs.gauge</references>
+    <references>nabu.services.jdbc.Services.update</references>
+    <references>nabu.utils.Lock.tryLock</references>
+    <references>java.lang.Boolean</references>
+    <references>nabu.frameworks.incident.specs.gauge:input</references>
+    <references>nabu.frameworks.incident.crud.incidentGaugeLog.types.output</references>
+    <references>java.lang.String</references>
+    <references>nabu.data.json.Services.marshal</references>
+    <references>nabu.utils.Server.sleep</references>
+    <references>nabu.frameworks.incident.crud.incidentGauge.services.list</references>
+    <references>nabu.frameworks.incident.crud.incidentGauge.types.output</references>
+    <references>nabu.utils.Date.incrementDuration</references>
+    <references>nabu.utils.reflection.Type.mask</references>
+    <references>nabu.utils.Stream.toString</references>
+</node>

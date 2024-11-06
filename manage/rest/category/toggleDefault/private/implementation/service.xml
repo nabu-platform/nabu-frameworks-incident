@@ -1,0 +1,188 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="3b2b0c9016654289a551266f0277b22e"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="ec1e0c5f13e547f8876a33b9c163f12d"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="8335104a7f954ad9b7a36f381059ca6b"
+				serviceId="nabu.frameworks.incident.crud.incidentCategory.services.get"
+				resultName="result0500a21c106c4dcd894e9dbaa868ea9a"
+				temporaryMapping="true"
+				x="173"
+				y="138"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="05fc8d6acce3443eadf6dffa1a9ca275"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/path/incidentCategoryId</from>
+				<to>id</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="9d3ab1d288854b2abfd96ae90af0c051"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result0500a21c106c4dcd894e9dbaa868ea9a/result</from>
+			<to>currentCategory</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+			disabled="false"
+			id="9b3b7897e5e942f28b0cb64c989acbd7"
+			label="!currentCategory"
+			lineNumber="3"
+			code="404"
+			whitelist="false" xsi:nil="true"/>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
+			comment="If we are setting this to true, update the rest to false"
+			disabled="false"
+			id="813fe9d7375e488f939632214a1b7e3b"
+			label="input/content/default"
+			lineNumber="4">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="d36dbd4f92ab49908355a9d5ad5ad42a"
+				lineNumber="5">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="92e67cb9b18a47a287b2c9e915dd8a7e"
+					serviceId="nabu.frameworks.incident.crud.incidentCategory.services.list"
+					resultName="result3e9bb8ef9f2a48af97231a1ab2f41666"
+					temporaryMapping="true"
+					x="347"
+					y="63"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="a62a7edfee3a423abded42c175735ca3"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/path/incidentCategoryId</from>
+					<to>filter/notId[0]</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="e82427d2a28d4e10af951e057bf683a3"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>true</from>
+					<to>filter/defaultCategory</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="e3afe15762df4deca8a83a6b2866e981"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>result3e9bb8ef9f2a48af97231a1ab2f41666/results</from>
+				<to>defaultCategories</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.For"
+				disabled="false"
+				id="2bcd60f149f94ac89477cb95d4380869"
+				lineNumber="6"
+				variable="defaultCategory">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					comment="Set false"
+					disabled="false"
+					id="aef9941f275e44b881497854ff975bdc"
+					lineNumber="7">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="369d5e6820fe4fe6a0e10c14643524cc"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>false</from>
+					<to>defaultCategory/defaultCategory</to>
+				</steps>
+			</steps>
+			<query>defaultCategories</query>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="1544bd43a1ab4050b812324859886d46"
+				label="defaultCategories"
+				lineNumber="8">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="f2e43b4f0a7241bc918d1d7c1d24c3e2"
+					serviceId="nabu.services.jdbc.Services.update"
+					resultName="result0e624d34f4224012a4823bdc7fb42e53"
+					temporaryMapping="true"
+					x="39"
+					y="49"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="b7851425c11f46bba9e1055774eedbd0"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>defaultCategories</from>
+					<to>instances</to>
+				</steps>
+			</steps>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="Set true"
+			disabled="false"
+			id="80fe693af4764086b0542bf6ac55a789"
+			lineNumber="9">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="e573d9df6b1e4db0a8b8e1e15b40802f"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>input/content/default</from>
+			<to>currentCategory/defaultCategory</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="1e52168aa612450496b6c87a2962d0e3"
+			lineNumber="10">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="f93bc01a57e54fdbad5dac1098a50b60"
+				serviceId="nabu.services.jdbc.Services.update"
+				resultName="result3bdcb502b19543d4a688dd2ba8646c5a"
+				temporaryMapping="true"
+				x="80"
+				y="114"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="a24eeaf0bffd42abbb4529a01447c9e6"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>currentCategory</from>
+				<to>instances[0]</to>
+			</steps>
+		</steps>
+	</steps>
+</sequence>
