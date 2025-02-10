@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2025-02-05T14:53:03.112+01:00" lastModified="2025-02-05T14:53:57.117+01:00" leaf="true" version="4">
+    <environmentId>ares</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties>
+        <property key="instanceType">event</property>
+    </properties>
+    <references>nabu.frameworks.events.services.reclassifyEvents</references>
+    <references>nabu.frameworks.events.crud.event.services.list</references>
+    <references>java.util.UUID</references>
+    <references>nabu.frameworks.events.crud.event.types.output</references>
+    <references>nabu.frameworks.incident.specs.reclassify</references>
+</node>

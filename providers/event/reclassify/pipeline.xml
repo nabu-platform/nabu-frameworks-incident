@@ -1,0 +1,5 @@
+<structure interface="nabu.frameworks.incident.specs.reclassify" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure collectionName="events" definition="nabu.frameworks.events.crud.event.types.output" enricher="nabu.frameworks.events.crud.event.services.list" maxOccurs="unbounded" minOccurs="0" name="events" persister="nabu.frameworks.events.crud.event.batch.updateAll"/>
+</structure>

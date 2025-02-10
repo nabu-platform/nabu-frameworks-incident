@@ -1,0 +1,325 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="5f2a9338dee842509ff50f995e678241"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="c8b8d0cafb58458ab950953ec392d7c1"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="e24ec58303a249f38b68223e044444e1"
+				serviceId="nabu.utils.reflection.Service.listImplementations"
+				resultName="resultb372a2cfc17e47989d5585d29f0b7d35"
+				temporaryMapping="true"
+				x="373"
+				y="71"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="792361f1e1a74a4bbe6122383d036b8c"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>nabu.frameworks.incident.specs.reclassify</from>
+				<to>interfaceId</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="07ee46423410447ba95884ee127d6d27"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultb372a2cfc17e47989d5585d29f0b7d35/implementations</from>
+			<to>implementations</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="884db9b66baa4d9c9e42b84ed9692956"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultb372a2cfc17e47989d5585d29f0b7d35/implementations/properties[key == "instanceType"]/value</from>
+			<to>supportedInstanceTypes</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="d3356508ef0b40cebc2b7b570c99f19e"
+			label="supportedInstanceTypes != null"
+			lineNumber="3">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="f9f0fdb99e2b40e0b807ae1004fd4e7b"
+				serviceId="nabu.frameworks.incident.crud.incidentLog.services.list"
+				resultName="result72b4c6bdd4f940088bb9191691752a04"
+				temporaryMapping="true"
+				x="253"
+				y="43"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="50e44219507848b2a327c87ba5a75858"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/path/incidentId</from>
+				<to>filter/incidentId[0]</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="27871753f659425a9f8caa740576b7a7"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>false</from>
+				<to>filter/suppressed</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="025e4b73c50147259e8b6eb70150265d"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>supportedInstanceTypes</from>
+				<to>filter/instanceType</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="11b9535b61b04f7e89aa0ff548f2d7ba"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>true</from>
+				<to>filter/hasInstanceId</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="ccb9fc0cde274c62bd228399a15b94a9"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result72b4c6bdd4f940088bb9191691752a04/results</from>
+			<to>logs</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="c3bcd068f36d48b8a50377cb022902cb"
+			label="logs"
+			lineNumber="4">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="4ad67f51c0014cc4ac8621845d7084fa"
+				serviceId="nabu.utils.List.group"
+				resultName="resultd66c93801a6e43978001e901658c7a30"
+				temporaryMapping="true"
+				x="76"
+				y="63"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="8ec421df8b444c9197eb98450e171df9"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>nabu.frameworks.incident.manage.rest.incident.groupedLogs</from>
+				<to>definition</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="8efc82bb37994b478c12615e7128a224"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>logs</from>
+				<to>list</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="28b766a577314b18a0edbc0562229e0a"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultd66c93801a6e43978001e901658c7a30/response</from>
+			<to>groups</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.For"
+			disabled="false"
+			id="89503b28f5ad445480e14181860da8e9"
+			lineNumber="5"
+			variable="group">
+		<steps xsi:type="be.nabu.libs.services.vm.step.For"
+				disabled="false"
+				id="db5111fd32e9419e86e093316b4e7447"
+				lineNumber="6"
+				variable="implementation">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					disabled="false"
+					id="7b6919241849471184fb57d2e90afc52"
+					lineNumber="7">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="da1c5a1f0394486595fb224a554bf7af"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>implementation/properties[key == "instanceType"]/value</from>
+					<to>instanceType</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
+					disabled="false"
+					id="26994a8e1218438189ee9bfc8b464361"
+					label="instanceType == group/instanceType"
+					lineNumber="8">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+						disabled="false"
+						id="1c1a9e2729c443d7aa93df9f2f583ade"
+						lineNumber="9">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="5d28a5ae4c42418080e087918eb58874"
+							mask="false"
+							optional="false"
+							fixedValue="false">
+						<from>implementations[0]</from>
+						<to>implementationToUse</to>
+					</steps>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Break"
+						disabled="false"
+						id="0db7da911f0b477c86b1f56402dbcb1d"
+						lineNumber="10">
+					<count>2</count>
+				</steps>
+			</steps>
+			<query>implementations</query>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="bc646c3e15514a84b69a89fd0bd37b10"
+				label="implementationToUse"
+				lineNumber="11">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="a31b2d44b2794e57bbede9c50c603f10"
+					serviceId="nabu.frameworks.incident.specs.reclassify"
+					resultName="resultf42f81375c804be4a031b4d284acce33"
+					temporaryMapping="true"
+					x="308"
+					y="115"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="01056c8f42ed4548b1265bf48b526e3e"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>group/logs/instanceId</from>
+					<to>instanceIds</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="390993334925484fb99d610ec4b47ed1"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>implementationToUse/id</from>
+					<to>implementationId</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="f84dcab3205f4fa48101b1dc4c247ba8"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>resultf42f81375c804be4a031b4d284acce33/reclassifiedIds</from>
+				<to>reclassifiedIds</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.For"
+				disabled="false"
+				id="c128c295fa994f8c802e5614a8b27cd1"
+				lineNumber="12"
+				variable="reclassifiedId"
+				into="reclassifiedLogs">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					disabled="false"
+					id="a5e6de0701ba45d8b3f92292ccdef5d1"
+					lineNumber="13">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="4c235ab7462749998dc595f63424f2b2"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>group/logs[instanceId == /reclassifiedId]</from>
+					<to>reclassifiedLogs[0]</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					comment="Update suppressed"
+					disabled="false"
+					id="42bd28942ba74097bd43828506c35973"
+					label="reclassifiedLogs"
+					lineNumber="14">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="803cf99ee13b4e11876afeae954e3390"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>true</from>
+					<to>reclassifiedLogs[0]/suppressed</to>
+				</steps>
+			</steps>
+			<query>reclassifiedIds</query>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="0d0d525a5d6442ff95b5c01669a99bb3"
+				label="reclassifiedLogs"
+				lineNumber="15">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="586bd4f054354b678c336c8ffb9f15a0"
+					serviceId="nabu.services.jdbc.Services.update"
+					resultName="result3ad4daca3984465ea8e224a0fc9e29eb"
+					temporaryMapping="true"
+					x="151"
+					y="214"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="01693215b1984b209beed1fadca1cd66"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>reclassifiedLogs</from>
+					<to>instances</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Drop"
+					disabled="false"
+					id="a43257e2e36842d487cfe003ce9d8dce"
+					path="reclassifiedLogs" xsi:nil="true"/>
+		</steps>
+		<query>groups</query>
+	</steps>
+</sequence>

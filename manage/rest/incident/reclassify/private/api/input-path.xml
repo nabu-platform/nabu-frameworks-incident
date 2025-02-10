@@ -1,0 +1,3 @@
+<structure name="path">
+    <field name="incidentId" type="java.util.UUID"/>
+</structure>

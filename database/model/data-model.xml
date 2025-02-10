@@ -44,8 +44,8 @@
     <entries>
         <synchronize>true</synchronize>
         <type>nabu.frameworks.incident.database.types.incidentGaugeLog</type>
-        <x>1620</x>
-        <y>444</y>
+        <x>1614</x>
+        <y>512</y>
     </entries>
     <entries>
         <synchronize>true</synchronize>

@@ -1,0 +1,77 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="e0ef7268f81a41b49f78f78c5a15add1"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="cc5fe95d50b541a09974e7aa97a92531"
+			label="input/instanceIds != null"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="c69b29f099d9450f9e06911b726cf13f"
+				serviceId="nabu.frameworks.events.crud.event.services.list"
+				resultName="result141db8fc86a64827a5e6ce64f8c18f0c"
+				temporaryMapping="true"
+				x="63"
+				y="52"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="d4a8876c103a4e8cb32f65ab8144a9d5"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/instanceIds</from>
+				<to>filter/id</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="cdcf5ce841d74416add6e034c238f652"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result141db8fc86a64827a5e6ce64f8c18f0c/results</from>
+			<to>events</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="4d8b1fe1d9ec47c8a47069adc7109b8e"
+			label="events"
+			lineNumber="3">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="e9fe104e5e714cf19f989c1651a0ed65"
+				serviceId="nabu.frameworks.events.services.reclassifyEvents"
+				resultName="result965b4b8799a948ac91bc29016580aa9f"
+				temporaryMapping="true"
+				x="41"
+				y="32"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="3de44274d6e94b39ae34c3b8a79be90f"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>events</from>
+				<to>events</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="d0a734dddaea48c69f7f7e9ddf508935"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result965b4b8799a948ac91bc29016580aa9f/reclassified/id</from>
+			<to>output/reclassifiedIds</to>
+		</steps>
+	</steps>
+</sequence>

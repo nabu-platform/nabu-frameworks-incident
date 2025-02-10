@@ -1,0 +1,4 @@
+<structure name="groupedLogs">
+    <field comment="If there is an instance id, it is often interesting to tell the system which type..." name="instanceType" type="java.lang.String"/>
+    <structure collectionName="incidentLogs" definition="nabu.frameworks.incident.crud.incidentLog.types.output" enricher="nabu.frameworks.incident.crud.incidentLog.services.list" maxOccurs="unbounded" minOccurs="0" name="logs" persister="nabu.frameworks.incident.crud.incidentLog.batch.updateAll"/>
+</structure>

@@ -12,4 +12,5 @@
     <field comment="If filled in, it should contain structural json data" minOccurs="0" name="data" type="java.lang.String"/>
     <field minOccurs="0" name="server" type="java.lang.String"/>
     <field minOccurs="0" name="correlationId" type="java.lang.String"/>
+    <field comment="A particular log may be suppressed if it is no longer useful. For example suppose you have an incident with multiple hits and you want to fix them one by one (or in bulk), you can suppress processed ones." name="suppressed" type="java.lang.Boolean"/>
 </structure>

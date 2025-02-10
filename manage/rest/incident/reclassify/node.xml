@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2025-02-05T14:54:43.767+01:00" lastModified="2025-02-05T15:13:57.128+01:00" leaf="true" version="17">
+    <environmentId>ares</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.frameworks.incident.crud.incidentLog.services.list</references>
+    <references>nabu.services.jdbc.Services.update</references>
+    <references>nabu.frameworks.incident.manage.rest.incident.groupedLogs</references>
+    <references>nabu.utils.reflection.Service.listImplementations</references>
+    <references>java.util.UUID</references>
+    <references>java.lang.String</references>
+    <references>nabu.utils.types.NodeDescription</references>
+    <references>nabu.utils.List.group</references>
+    <references>nabu.frameworks.incident.specs.reclassify</references>
+    <references>nabu.frameworks.incident.crud.incidentLog.types.output</references>
+</node>
