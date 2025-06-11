@@ -1,0 +1,43 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="c48c42c117834c6080dff3d750908801"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.For"
+			disabled="false"
+			id="70fe8c5a42654869b662469b48575c30"
+			lineNumber="2"
+			variable="incidentId">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="1a7c545c475f484abc42c2916b749ad3"
+				lineNumber="3">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="3ec2b526e2e64ea3900229bd3a53d196"
+					serviceId="nabu.frameworks.incident.manage.rest.incident.handle"
+					resultName="result16dfd082933346c6b1a185f12889ca37"
+					temporaryMapping="true"
+					x="268"
+					y="113"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="65f4fb284e5b465da38d7fbf343146a2"
+						fixedValue="false">
+					<from>incidentId</from>
+					<to>path/incidentId</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="fb9ac5c54a9e48dbb04ee6c3d60a4cef"
+						fixedValue="false">
+					<from>input/content/comment</from>
+					<to>content/comment</to>
+				</steps>
+			</steps>
+		</steps>
+		<query>input/content/incidentIds</query>
+	</steps>
+</sequence>

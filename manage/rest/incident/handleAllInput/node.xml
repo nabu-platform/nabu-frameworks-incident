@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.types.structure.StructureManager" created="2025-06-11T11:06:21.679+02:00" lastModified="2025-06-11T11:06:36.295+02:00" leaf="true" version="4">
+    <environmentId>ares</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.frameworks.incident.manage.rest.incident.handleInput</references>
+    <references>java.util.UUID</references>
+</node>

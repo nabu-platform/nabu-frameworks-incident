@@ -17,4 +17,5 @@
     <webFragments>nabu.frameworks.incident.crud.incidentGaugeLog</webFragments>
     <webFragments>nabu.frameworks.incident.manage.rest.incident.create</webFragments>
     <webFragments>nabu.frameworks.incident.manage.rest.incident.reclassify</webFragments>
+    <webFragments>nabu.frameworks.incident.manage.rest.incident.handleAll</webFragments>
 </webModule>
