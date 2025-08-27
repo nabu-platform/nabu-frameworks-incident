@@ -9,6 +9,7 @@
     <useProjectAsPermissionContext>false</useProjectAsPermissionContext>
     <useGlobalPermissionContext>true</useGlobalPermissionContext>
     <input>nabu.frameworks.incident.manage.rest.incident.assignInput</input>
+    <deviceBestEffort>false</deviceBestEffort>
     <token>true</token>
     <lenient>true</lenient>
     <webApplicationId>false</webApplicationId>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-10-01T17:02:11.316+02:00" lastModified="2024-10-01T17:10:11.201+02:00" leaf="true" version="12">
-    <environmentId>apollo</environmentId>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-10-01T17:02:11.316+02:00" lastModified="2025-08-26T12:22:01.543+02:00" leaf="true" version="13">
+    <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
@@ -8,6 +8,7 @@
     <references>nabu.protocols.smtp.client.Services.newEmailPart</references>
     <references>nabu.frameworks.incident.specs.trigger</references>
     <references>java.lang.Object</references>
+    <references>java.lang.String</references>
     <references>nabu.frameworks.incident.database.types.incident</references>
     <references>nabu.frameworks.incident.providers.trigger.emailProperties</references>
     <references>nabu.utils.String.split</references>

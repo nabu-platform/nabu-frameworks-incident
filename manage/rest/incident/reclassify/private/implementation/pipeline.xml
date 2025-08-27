@@ -1,4 +1,4 @@
-<structure interface="$self:api" name="pipeline">
+<structure interface="nabu.frameworks.incident.manage.rest.incident.reclassify:api" name="pipeline">
     <structure name="input"/>
     <structure name="output"/>
     <structure collectionName="incidentLogs" definition="nabu.frameworks.incident.crud.incidentLog.types.output" enricher="nabu.frameworks.incident.crud.incidentLog.services.list" maxOccurs="unbounded" minOccurs="0" name="logs" persister="nabu.frameworks.incident.crud.incidentLog.batch.updateAll"/>

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-10-01T16:44:45.383+02:00" lastModified="2024-10-04T10:18:40.556+02:00" leaf="true" version="36">
-    <environmentId>apollo</environmentId>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-10-01T16:44:45.383+02:00" lastModified="2025-08-27T12:08:02.609+02:00" leaf="true" version="38">
+    <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
     <references>nabu.utils.Runtime.summarizeException</references>
-    <references>nabu.utils.reflection.properties.unmarshalServiceInput</references>
     <references>nabu.frameworks.incident.crud.incidentTrigger.types.output</references>
     <references>nabu.utils.Runtime.getCurrentToken</references>
     <references>be.nabu.utils.cep.api.EventSeverity</references>
@@ -21,6 +20,7 @@
     <references>nabu.frameworks.incident.crud.incidentLog.services.create</references>
     <references>java.lang.String</references>
     <references>nabu.frameworks.incident.database.types.incident</references>
+    <references>nabu.data.json.properties.unmarshalServiceInput</references>
     <references>nabu.frameworks.incident.database.types.incidentType</references>
     <references>nabu.frameworks.incident.crud.incidentTrigger.services.list</references>
 </node>
